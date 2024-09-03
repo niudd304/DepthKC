@@ -160,6 +160,7 @@ void build_instance(char * filename)
     }
     sscanf(temp, "%s%s%d%d", temp1, temp1, &v, &e);
     CNF_list = (struct CNF_node*)malloc(v*sizeof(struct CNF_node));
+    memset(CNF_list, 0, v*sizeof(struct CNF_node));
     orig_clause_no = (int **)malloc(v*sizeof(int*));
     CNF_list[0].clause = (int **)malloc(e*sizeof(int *));
     CNF_list[0].clause_num = (int *)malloc(e*sizeof(int));
